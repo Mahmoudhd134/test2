@@ -1,0 +1,260 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav {
+  background-color: rgb(157, 157, 189);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+.nav a {
+  text-decoration: none;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.nav li {
+  font-size: 1.75em;
+  padding: 5px;
+  transition-duration: 0.1s;
+  transition-property: transform;
+}
+.nav li:hover {
+  text-decoration: underline 1px;
+  cursor: pointer;
+  color: blue;
+  transform: translateY(-2px);
+}
+.slider {
+  position: fixed;
+  top: 60px;
+  left: 0px;
+  width: 150px;
+  height: calc(100% - 60px);
+  background-color: rgb(163, 163, 163);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slider a:hover {
+  background-color: gray;
+}
+.links {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0px;
+  text-decoration: none;
+  transition: background-color 0.4s;
+}
+
+.page {
+  margin-top: 70px;
+  margin-left: 150px;
+}
+@media (max-width: 450px) {
+  .slider {
+    width: 100%;
+    top: 80%;
+    height: 20%;
+    background-color: rgb(163, 163, 163);
+    z-index: 5;
+  }
+  .page {
+    margin-top: 50px;
+    margin-left: 0px;
+  }
+  .nav {
+    font-size: 0.7em;
+    height: 40px;
+  }
+}
+.container {
+  margin: 0px 20px;
+}
+.main-title {
+  height: 80px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-background {
+  background-color: lightgray;
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) skewX(-20deg);
+  transition-duration: 1s;
+  z-index: -1;
+}
+.title-text {
+  font-size: 2em;
+  font-weight: bold;
+  transition: transform 2s;
+}
+.main-title:hover .title-background {
+  transform: translateY(-50%) skewX(0deg);
+  width: 100%;
+  background-color: gray;
+}
+.main-title:hover .text {
+  transform: scale(1.5);
+}
+
+.content {
+  margin: 20px 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, auto));
+  gap: 50px 20px;
+  justify-content: space-around;
+}
+.background {
+  background-color: lightgray;
+  border-radius: 20px;
+  min-width: 270px;
+  max-width: 320px;
+  height: 420px;
+  transition-duration: 0.3s;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 20px);
+  height: 400px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px gray;
+}
+.background:hover {
+  box-shadow: 2px 2px 10px gray;
+  transform: translate(3px, -3px);
+}
+
+.prev {
+  width: 100%;
+  height: 200px;
+}
+.prev img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.card > .title {
+  margin: 20px 10px;
+  font-size: 1.5em;
+}
+.dis {
+  margin: 0px 10px;
+  max-height: 100px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.read-more {
+  color: blue;
+  padding: 15px 10px 20px 10px;
+  transform: translateY(20px);
+  font-size: 1.3em;
+  border-top: 1px solid;
+  position: relative;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.read-more a {
+  text-decoration: none;
+}
+
+.read-more::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  border-top: 10px solid rgb(255, 30, 0);
+  border-right: 10px solid rgb(9, 255, 0);
+  border-bottom: 10px solid rgb(23, 144, 153);
+  border-left: 10px solid blue;
+}
+
+.flib-card-background {
+  perspective: 1000px;
+  background-color: lightgray;
+  width: 220px;
+  height: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flib-card-background a {
+  width: 100%;
+  height: 100%;
+}
+.flib-card {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+.flib-card .face {
+  font-weight: bold;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 10px;
+}
+.face img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}
+.front {
+  background-color: aqua;
+}
+.back {
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  background-color: rgb(80, 155, 155);
+  transform: rotateY(180deg);
+}
+.flib-card:hover {
+  transform: rotateY(-180deg);
+}
